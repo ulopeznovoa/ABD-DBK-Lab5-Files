@@ -18,10 +18,10 @@ create user if not exists "concurrencyUser" identified by "dba-2021";
 grant select,update on concurrency.variables to "concurrencyUser";
 grant create routine, alter routine, execute on *.* to "concurrencyUser";
 
-drop procedure if exists CheckResults;
+drop procedure if exists concurrency.CheckResults;
 delimiter //
 
-create procedure CheckResults()
+create procedure concurrency.CheckResults()
 begin
 select 'Isolation level' as 'Showing:';
 select @@TRANSACTION_ISOLATION;
