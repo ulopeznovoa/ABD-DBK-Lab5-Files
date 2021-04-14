@@ -17,3 +17,17 @@ insert into concurrency.variables values ("T",0);
 create user if not exists "concurrencyUser" identified by "dba-2021";
 grant select,update on concurrency.variables to "concurrencyUser";
 grant create routine, alter routine, execute on *.* to "concurrencyUser";
+
+drop procedure if exists CheckResults;
+delimiter //
+
+create procedure CheckResults()
+begin
+select 'Isolation level' as 'Showing:';
+select @@TRANSACTION_ISOLATION;
+select 'Variables table' as 'Showing:';
+select * from concurrency.variables;
+select 'Sum of A,B,C,D,E,F:' as 'Showing:';
+select sum(value) from concurrency.variables where name REGEXP '[A-F]';
+end; //
+delimiter ;
