@@ -9,5 +9,5 @@ insert into JMeterTest.People(name, surname) values ("Maite", "Martin");
 insert into JMeterTest.People(name, surname) values ("Mireia", "Martin");
 insert into JMeterTest.People(name, surname) values ("Susana", "Sala");
 
-create user if not exists "JMeterUser" identified by "mysql2021";
+create user if not exists "JMeterUser" identified by "Mysql-2021";
 grant select, update on JMeterTest.People to "JMeterUser";
