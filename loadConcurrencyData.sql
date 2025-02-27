@@ -14,7 +14,7 @@ insert into concurrency.variables values ("E",0);
 insert into concurrency.variables values ("F",0);
 insert into concurrency.variables values ("T",0);
 
-create user if not exists "concurrencyUser" identified by "dba-2021";
+create user if not exists "concurrencyUser" identified by "dba-upvehu";
 grant select,update on concurrency.variables to "concurrencyUser";
 grant create routine, alter routine, execute on *.* to "concurrencyUser";
 
