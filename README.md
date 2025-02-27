@@ -1,4 +1,4 @@
-# Lab 5 Sample Data
+# Lab 4 Sample Data
 
 SQL files with sample data for Lab assignment 4.
 
